@@ -1,0 +1,41 @@
+/* NotFound Page Styles */
+
+/* Tailwind: flex min-h-screen items-center justify-center bg-gray-100 */
+.notfound-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Tailwind: text-center */
+.notfound-content {
+  text-align: center;
+}
+
+/* Tailwind: mb-4 text-4xl font-bold */
+.notfound-title {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+/* Tailwind: mb-4 text-xl text-gray-600 */
+.notfound-message {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #4b5563; /* gray-600 */
+}
+
+/* Tailwind: text-blue-500 underline hover:text-blue-700 */
+.notfound-link {
+  color: #3b82f6; /* blue-500 */
+  text-decoration: underline;
+}
+
+.notfound-link:hover {
+  color: #1d4ed8; /* blue-700 */
+}
+
+

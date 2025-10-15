@@ -1,0 +1,251 @@
+/* Home Component Styles */
+/* Tailwind: min-h-screen relative overflow-hidden */
+
+.home-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  
+  /* 🖼️ Background padrão (Desktop e Tablet) */
+  background-image: url(/img_hero2.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Overlay escuro fixo sobre a imagem de fundo */
+.home-section::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+/* Tailwind: fixed inset-0 bg-black transition-opacity duration-300 ease-out z-5 */
+.home-shadow-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: opacity 300ms ease-out;
+  z-index: 2;
+}
+
+/* Tailwind: fixed inset-0 flex items-center justify-center z-10 */
+.home-hero-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  z-index: 10;
+}
+/* 📱 Controles específicos para MOBILE */
+@media (max-width: 767px) {
+  .home-section {
+    background-image: url(/img_hero.jpeg); /* Imagem diferente */
+    background-position: top center; /* Posição diferente */
+    background-attachment: scroll;   /* Sem parallax no mobile */
+    background-size: cover;
+  }
+
+  .home-section::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+/* Tailwind: text-center max-w-4xl mx-auto px-4 */
+.home-content-wrapper {
+    width: 100%;
+  text-align: center;
+  /* max-width: 56rem; 896px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Tailwind: flex justify-center items-center gap-8 */
+.home-logo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Alinhamento horizontal em telas maiores */
+@media (min-width: 768px) {
+  .home-logo-container {
+    flex-direction: column; /* Mantém centralizado verticalmente */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+.home-logo {  
+  height: 20rem; /* 320px */
+  width: auto;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .home-logo {
+    height: 24rem; /* 384px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-logo {
+    height: 28rem; /* 448px */
+  }
+}
+
+/* Hero Title Styles */
+.home-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px hsl(20 8% 8% / 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .home-hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.home-hero-title-accent {
+  color: hsl(var(--cta));
+}
+
+.home-hero-title-foreground {
+  color: hsl(var(--foreground));
+}
+
+/* Hero Description */
+.home-hero-description {
+  font-size: 1.25rem;
+  color: hsl(var(--cta));
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .home-hero-description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hero Buttons Container */
+.home-hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .home-hero-buttons {
+    flex-direction: row;
+  }
+}
+
+/* Hero Primary Button */
+.home-hero-button-primary {
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+}
+
+/* Hero Secondary Button */
+.home-hero-button-secondary {
+  color: hsl(var(--cta));
+  border-color: hsl(var(--cta));
+  background: transparent;
+}
+
+.home-hero-button-secondary:hover {
+  background-color: hsl(var(--cta));
+  color: hsl(var(--cta-foreground));
+}
+
+/* WhatsApp Button Wrapper */
+.home-whatsapp-button-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* WhatsApp Button */
+.home-whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: hsl(var(--cta));
+  color: hsl(var(--cta-foreground));
+  /* padding: 0.75rem 1.5rem; */
+  padding: 1rem 3.5rem;
+  border-radius: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 300ms;
+  font-size: 0.95rem;
+}
+
+.home-whatsapp-button:hover {
+  background-color: hsl(var(--cta) / 0.9);
+  transform: scale(1.05);
+}
+
+.home-whatsapp-button.btn-barbershop {
+  background: var(--gradient-cta);
+  box-shadow: var(--shadow-warm);
+}
+
+.home-whatsapp-button.btn-barbershop:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+/* WhatsApp Icon */
+.home-whatsapp-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+

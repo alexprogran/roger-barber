@@ -1,166 +1,250 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import global CSS variables */
+@import './variables.css';
 
-/* Barbershop Design System - La Firma */
+/* Global reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: hsl(var(--border));
+}
 
-@layer base {
-  :root {
-    /* Barbershop color palette inspired by the reference images */
-    --background: 20 8% 8%;
-    --foreground: 45 15% 95%;
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    --card: 20 12% 12%;
-    --card-foreground: 45 15% 95%;
+/* Font utility classes */
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
 
-    --popover: 20 12% 12%;
-    --popover-foreground: 45 15% 95%;
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
 
-    /* Warm brown/leather primary */
-    --primary: 25 45% 35%;
-    --primary-foreground: 45 15% 95%;
+/* Custom barbershop styling */
+.hero-text {
+  text-shadow: 2px 2px 4px hsl(20 8% 8% / 0.8);
+}
 
-    /* Darker brown secondary */
-    --secondary: 20 20% 20%;
-    --secondary-foreground: 45 15% 95%;
+.glass-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-    --muted: 20 15% 25%;
-    --muted-foreground: 45 10% 70%;
+/* Barbershop specific button variants */
+.btn-barbershop {
+  background: linear-gradient(135deg, hsl(60 71% 59%), hsl(60 71% 70%));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(226, 226, 76, 0.3);
+  border: 2px solid hsl(60 71% 59%);
+  position: relative;
+  z-index: 1;
+}
 
-    /* Golden accent like in the images */
-    --accent: 45 85% 55%;
-    --accent-foreground: 20 8% 8%;
+.btn-barbershop::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsl(60 71% 70%), hsl(60 71% 80%));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
 
-    /* Orange for call-to-action buttons */
-    --cta: 25 95% 55%;
-    --cta-foreground: 20 8% 8%;
+.btn-barbershop:hover::after {
+  opacity: 1;
+}
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+.btn-barbershop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 45px rgba(226, 226, 76, 0.5);
+  border-color: hsl(60 71% 65%);
+}
 
-    --border: 20 15% 25%;
-    --input: 20 15% 25%;
-    --ring: 25 45% 35%;
-
-    --radius: 0.75rem;
-
-    /* Custom gradients for barbershop theme */
-    --gradient-hero: linear-gradient(135deg, hsl(20 12% 12% / 0.9), hsl(25 25% 15% / 0.8));
-    --gradient-accent: linear-gradient(135deg, hsl(25 45% 35%), hsl(45 85% 55%));
-    --gradient-cta: linear-gradient(135deg, hsl(25 95% 55%), hsl(35 90% 60%));
-    
-    /* Shadows with warm tones */
-    --shadow-warm: 0 10px 30px -10px hsl(25 45% 35% / 0.3);
-    --shadow-glow: 0 0 40px hsl(45 85% 55% / 0.2);
-    
-    /* Smooth transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+/* Animação de pulso sutil */
+@keyframes button-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(226, 226, 76, 0.3);
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  50% {
+    box-shadow: 0 10px 35px rgba(226, 226, 76, 0.5);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.btn-barbershop {
+  animation: button-pulse 3s ease-in-out infinite;
+} 
 
-  body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+.navbar-overlay {
+  background: hsl(20 12% 12% / 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.location-card {
+  background: var(--gradient-hero);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-bounce);
+}
+
+.location-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--cta) / 0.7);
   }
-  
-  /* Custom barbershop styling */
-  .hero-text {
-    text-shadow: 2px 2px 4px hsl(20 8% 8% / 0.8);
+  70% {
+    box-shadow: 0 0 0 10px hsl(var(--cta) / 0);
   }
-  
-  .glass-effect {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--cta) / 0);
   }
 }
 
-@layer components {
-  /* Barbershop specific button variants */
-  .btn-barbershop {
-    background: var(--gradient-cta);
-    transition: var(--transition-smooth);
-    box-shadow: var(--shadow-warm);
+/* Utility classes for common patterns */
+.text-accent {
+  color: hsl(var(--accent));
+}
+
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+.text-cta {
+  color: hsl(var(--cta));
+}
+
+.bg-background {
+  background-color: hsl(var(--background));
+}
+
+.bg-card {
+  background-color: hsl(var(--card));
+}
+
+.bg-muted\/30 {
+  background-color: hsl(var(--muted) / 0.3);
+}
+
+.border-border {
+  border-color: hsl(var(--border));
+}
+
+/* Responsive text utilities */
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
   
-  .btn-barbershop:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+  .md\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
   }
-  
-  .navbar-overlay {
-    background: hsl(20 12% 12% / 0.95);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  
-  .location-card {
-    background: var(--gradient-hero);
-    backdrop-filter: blur(10px);
-    transition: var(--transition-bounce);
-  }
-  
-  .location-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-glow);
-  }
+}
+
+/* Gap utilities */
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Padding utilities */
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Margin utilities */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+/* Width utilities */
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
 }

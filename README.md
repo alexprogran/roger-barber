@@ -1,73 +1,133 @@
-# Welcome to your Lovable project
+# 💈 Roger Barber - Barbearia
 
-## Project info
+Um site moderno e responsivo para barbearia, desenvolvido com **React + JavaScript + CSS**.
 
-**URL**: https://lovable.dev/projects/ace8b9df-b1c1-47cf-a784-d64f119a050b
+## 🚀 Tecnologias
 
-## How can I edit this code?
+- **React 18** - Biblioteca JavaScript para interfaces
+- **Vite** - Build tool rápido e moderno
+- **React Router** - Navegação entre páginas
+- **Radix UI** - Componentes acessíveis
+- **Lucide React** - Ícones modernos
+- **CSS Modules** - Estilização componentizada
 
-There are several ways of editing your application.
+## 📦 Instalação
 
-**Use Lovable**
+```bash
+# Instalar dependências
+npm install
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ace8b9df-b1c1-47cf-a784-d64f119a050b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Executar em desenvolvimento
 npm run dev
+
+# Build para produção
+npm run build
+
+# Preview da build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 📂 Estrutura do Projeto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+roger_barber/
+├── src/
+│   ├── components/       # Componentes React com CSS
+│   │   ├── Home.jsx + Home.css
+│   │   ├── Navbar.jsx + Navbar.css
+│   │   ├── AboutUs.jsx + AboutUs.css
+│   │   ├── Footer.jsx + Footer.css
+│   │   ├── LocationCard.jsx + LocationCard.css
+│   │   └── ui/          # Componentes UI (Radix UI)
+│   ├── pages/           # Páginas da aplicação
+│   │   ├── Index.jsx + Index.css
+│   │   ├── Services.jsx + Services.css
+│   │   ├── Map.jsx + Map.css
+│   │   ├── UserReview.jsx + UserReview.css
+│   │   └── NotFound.jsx + NotFound.css
+│   ├── hooks/           # Custom React Hooks
+│   ├── lib/             # Utilitários
+│   ├── assets/          # Imagens e recursos
+│   ├── App.jsx          # Componente principal
+│   ├── main.jsx         # Entry point
+│   ├── index.css        # Estilos globais
+│   └── variables.css    # Variáveis CSS
+├── public/              # Arquivos públicos
+├── index.html
+├── vite.config.js
+└── package.json
+```
 
-**Use GitHub Codespaces**
+## 🎨 Personalização
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Cores e Temas
 
-## What technologies are used for this project?
+Edite `src/variables.css` para personalizar as cores:
 
-This project is built with:
+```css
+:root {
+  --accent: 45 85% 55%;     /* Cor dourada */
+  --cta: 25 95% 55%;        /* Cor dos botões */
+  --background: 20 8% 8%;   /* Fundo escuro */
+  /* ... outras variáveis */
+}
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Componentes
 
-## How can I deploy this project?
+Cada componente tem seu próprio arquivo CSS para fácil personalização:
+- `Home.css` - Página inicial com hero
+- `Navbar.css` - Menu de navegação
+- `Services.css` - Página de serviços
+- etc.
 
-Simply open [Lovable](https://lovable.dev/projects/ace8b9df-b1c1-47cf-a784-d64f119a050b) and click on Share -> Publish.
+## ✨ Funcionalidades
 
-## Can I connect a custom domain to my Lovable project?
+- ✅ Design responsivo (mobile, tablet, desktop)
+- ✅ Menu de navegação fixo com efeito de scroll
+- ✅ Hero section com imagem de fundo paralax
+- ✅ Seção "Sobre Nós" com imagens e animações
+- ✅ Grade de serviços com cards interativos
+- ✅ Mapa de localização integrado
+- ✅ Sistema de avaliações de clientes
+- ✅ Botões de CTA com integração WhatsApp
+- ✅ Footer completo com informações e links
+- ✅ Animações suaves em CSS
+- ✅ Sistema de variáveis CSS para fácil manutenção
 
-Yes, you can!
+## 🌐 Páginas
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Home** (`/`) - Página inicial com hero e apresentação
+- **Sobre Nós** - História e diferenciais da barbearia
+- **Serviços** - Catálogo de serviços e preços
+- **Localização** - Mapa e informações de contato
+- **Avaliações** - Reviews e feedbacks dos clientes
+- **404** - Página de erro personalizada
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📱 Responsividade
+
+O site é totalmente responsivo com breakpoints:
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1024px
+- **Desktop**: > 1024px
+
+## 🎯 SEO
+
+- Meta tags otimizadas
+- Open Graph para redes sociais
+- Schema.org para negócios locais
+- Sitemap e robots.txt
+
+## 📝 Licença
+
+Este projeto foi desenvolvido para a Barbearia Roger Barber.
+
+## 👨‍💻 Conversão
+
+Este projeto foi convertido de **TypeScript + Tailwind CSS** para **JavaScript + CSS convencional** mantendo 100% da funcionalidade original.
+
+Veja `CONVERSION_COMPLETE.md` para detalhes completos da conversão.
+
+---
+
+**Desenvolvido com ❤️ para Roger Barber**
