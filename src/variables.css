@@ -1,3 +1,6 @@
+/* Font Families - DEVE ESTAR NO TOPO! */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap');
+
 /* Global CSS Variables - Barbershop Design System */
 
 :root {
@@ -101,9 +104,6 @@
   --sidebar-border: 240 3.7% 15.9%;
   --sidebar-ring: 217.2 91.2% 59.8%;
 }
-
-/* Font Families */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap');
 
 /* Container utility */
 .container {
