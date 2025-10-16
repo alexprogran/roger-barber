@@ -56,6 +56,7 @@
   justify-content: center; 
   z-index: 10;
 }
+
 /* 📱 Controles específicos para MOBILE */
 @media (max-width: 767px) {
   .home-section {
@@ -67,7 +68,7 @@
 
   .home-section::before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -79,6 +80,19 @@
     );
     z-index: 1;
     pointer-events: none;
+  }
+
+  /* No mobile, hero-content rola junto com a página */
+  .home-hero-content {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  /* Shadow overlay também rola no mobile */
+  .home-shadow-overlay {
+    position: absolute;
   }
 }
 
@@ -234,12 +248,10 @@
 
 .home-whatsapp-button.btn-barbershop {
   background: var(--gradient-cta);
-  box-shadow: var(--shadow-warm);
 }
 
 .home-whatsapp-button.btn-barbershop:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-glow);
 }
 
 /* WhatsApp Icon */
@@ -285,11 +297,9 @@
 
 .home-services-button.btn-barbershop {
   background: var(--gradient-cta);
-  box-shadow: var(--shadow-warm);
 }
 
 .home-services-button.btn-barbershop:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-glow);
 }
 

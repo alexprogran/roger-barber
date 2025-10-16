@@ -41,7 +41,6 @@ body {
 .btn-barbershop {
   background: linear-gradient(135deg, hsl(60 71% 59%), hsl(60 71% 70%));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(226, 226, 76, 0.3);
   border: 2px solid hsl(60 71% 59%);
   position: relative;
   z-index: 1;
@@ -67,22 +66,7 @@ body {
 
 .btn-barbershop:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 45px rgba(226, 226, 76, 0.5);
   border-color: hsl(60 71% 65%);
-}
-
-/* Animação de pulso sutil */
-@keyframes button-pulse {
-  0%, 100% {
-    box-shadow: 0 10px 30px rgba(226, 226, 76, 0.3);
-  }
-  50% {
-    box-shadow: 0 10px 35px rgba(226, 226, 76, 0.5);
-  }
-}
-
-.btn-barbershop {
-  animation: button-pulse 3s ease-in-out infinite;
 } 
 
 .navbar-overlay {
