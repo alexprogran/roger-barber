@@ -11,7 +11,7 @@ const AboutUs = () => {
           <div className="about-image-wrapper">
             <div className="about-image-container">
               <img 
-                src={barbershopInterior}
+                src='/loja.jpg'
                 alt="Interior da La Firma Barbearia com cadeiras vintage e ambiente acolhedor"
                 className="about-image"
                 loading="lazy"
@@ -26,7 +26,7 @@ const AboutUs = () => {
           <div className="about-content">
             <div>
               <h2 className="about-title">
-                BARBER
+              Roger Barber
               </h2>
               <p className="about-subtitle">
               Aqui, o clima é bom, o atendimento é top e você sai com estilo.
