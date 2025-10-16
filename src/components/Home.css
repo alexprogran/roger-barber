@@ -134,9 +134,9 @@
   max-width: 100%;
 }
 
-@media (min-width: 768px) {
-  .home-logo {
-    height: 24rem; /* 384px */
+@media (max-width: 768px) {
+  .home-logo { 
+     height: 18rem; /* 384px */
   }
 }
 

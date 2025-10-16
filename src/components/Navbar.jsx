@@ -27,8 +27,8 @@ const Navbar = () => {
 
   const menuItems = [
    
-    { label: "Roger Barber", href: "#about" },
-    { label: "Serviços", href: "#services" },
+    { label: "Sobre Nós", href: "#about" },
+    { label: "Serviços", href: "#services" },    
     { label: "Contato", href: "#contact" },
   ];
 
