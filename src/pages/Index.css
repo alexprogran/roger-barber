@@ -1,6 +1,9 @@
-/* Index Page Styles */
+html, body {
+  overflow-x: hidden;
+}
 
-/* Tailwind: min-h-screen */
+
+
 .index-page {
   min-height: 100vh;
 }

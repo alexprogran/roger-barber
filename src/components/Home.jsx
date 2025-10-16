@@ -16,7 +16,7 @@ const Home = () => {
       // Sombra aumenta conforme o usuário rola para baixo
       const newShadowOpacity = Math.min(0.7, (scrollY / windowHeight) * 1.2);
       setShadowOpacity(newShadowOpacity);
-    };
+    }; 
 
     window.addEventListener('scroll', handleScroll);
     

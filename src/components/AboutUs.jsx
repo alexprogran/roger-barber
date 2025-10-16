@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import barbershopInterior from "@/assets/barbershop-interior.jpg";
 import "./AboutUs.css";
 
-const AboutUs = () => {
+const AboutUs = () => { 
   return (
     <section id="about" className="about-section">
       <div className="about-container">
@@ -11,7 +11,7 @@ const AboutUs = () => {
           <div className="about-image-wrapper">
             <div className="about-image-container">
               <img 
-                src='/loja.jpg'
+                src='/img_hero2.jpeg'
                 alt="Interior da La Firma Barbearia com cadeiras vintage e ambiente acolhedor"
                 className="about-image"
                 loading="lazy"
