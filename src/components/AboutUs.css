@@ -19,7 +19,10 @@
   .about-section {
     padding-top: 0;    
   }
-  
+
+  .about-actions{
+  display: none;
+  }
 }
 
 /* Tailwind: container mx-auto px-4 */

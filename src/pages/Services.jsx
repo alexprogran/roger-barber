@@ -12,6 +12,7 @@ const Services = () => {
       price: "R$ 45",
       duration: "45 min",
       features: ["Técnicas modernas", "Produtos premium", "Finalização completa"],
+      image: "/corte.png",
       popular: true
     },
     {
@@ -21,6 +22,7 @@ const Services = () => {
       price: "R$ 35",
       duration: "30 min",
       features: ["Modelagem personalizada", "Hidratação", "Finalização com óleo"],
+      image: "/corte.png",
       popular: false
     },
     {
@@ -30,6 +32,7 @@ const Services = () => {
       price: "R$ 70",
       duration: "60 min",
       features: ["Corte + Barba", "Economia de R$ 10", "Produtos premium"],
+      image: "/corte.png",
       popular: true
     },
     {
@@ -39,6 +42,7 @@ const Services = () => {
       price: "R$ 25",
       duration: "20 min",
       features: ["Design personalizado", "Técnica precisa", "Resultado natural"],
+      image: "/corte.png",
       popular: false
     },
     {
@@ -48,6 +52,7 @@ const Services = () => {
       price: "R$ 55",
       duration: "40 min",
       features: ["Hidratação profunda", "Massagem relaxante", "Produtos especiais"],
+      image: "/corte.png",
       popular: false
     },
     {
@@ -57,19 +62,18 @@ const Services = () => {
       price: "R$ 120",
       duration: "90 min",
       features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/corte.png",
       popular: true
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background relative z-60">
-     
-      
+    <div className="services-wrapper">
       <main className="services-page">
         {/* Hero Section */}
         <section className="services-hero">
-          <div className="container mx-auto px-4 py-20">
-            <div className="text-center max-w-4xl mx-auto">
+          <div className="services-info-container" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
+            <div className="services-info-header">
               <h1 className="services-title">
                 NOSSOS SERVIÇOS
               </h1>
@@ -83,7 +87,7 @@ const Services = () => {
 
         {/* Services Grid */}
         <section className="services-grid-section">
-          <div className="container mx-auto px-4 py-16">
+          <div className="services-info-container" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
             <div className="services-grid">
               {services.map((service) => (
                 <Card key={service.id} className={`service-card ${service.popular ? 'popular' : ''}`}>
@@ -99,13 +103,22 @@ const Services = () => {
                     <CardTitle className="service-card-title">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="service-card-description">
+                    {/* <CardDescription className="service-card-description">
                       {service.description}
-                    </CardDescription>
+                    </CardDescription> */}
                   </CardHeader>
                   
+                  {/* Service Image */}
+                  <div className="service-card-image-wrapper">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="service-card-image"
+                    />
+                  </div>
+                  
                   <CardContent className="service-card-content">
-                    <div className="service-price-section">
+                    {/* <div className="service-price-section">
                       <span className="service-price">{service.price}</span>
                       <span className="service-duration">{service.duration}</span>
                     </div>
@@ -117,7 +130,7 @@ const Services = () => {
                           {feature}
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
                     
                     <Button 
                       className="service-button"
@@ -134,65 +147,65 @@ const Services = () => {
         </section>
 
         {/* Additional Info Section */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bebas mb-4">
-                <span className="text-accent">POR QUE</span>
+        <section className="services-info-section">
+          <div className="services-info-container">
+            <div className="services-info-header">
+              <h2 className="services-info-title">
+                <span className="services-info-title-accent">POR QUE</span>
                 <br />
-                <span className="text-foreground">ESCOLHER NÓS?</span>
+                <span className="services-info-title-main">ESCOLHER NÓS?</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="services-info-subtitle">
                 Oferecemos muito mais que um simples corte. Descubra os diferenciais que nos tornam únicos.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border bg-card">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                    <span className="text-2xl">⏰</span>
+            <div className="services-info-grid">
+              <Card className="services-info-card">
+                <CardHeader className="services-info-header">
+                  <div className="services-info-card-icon-wrapper">
+                    <span className="services-info-card-icon">⏰</span>
                   </div>
-                  <CardTitle className="text-xl font-oswald text-foreground">
+                  <CardTitle className="services-info-card-title">
                     Horário Flexível
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent>
+                  <CardDescription className="services-info-card-description">
                     Atendemos de segunda a sábado, com horários que se adaptam à sua rotina. 
                     Sempre disponíveis para atender você no melhor momento.
                   </CardDescription>
                 </CardContent>
               </Card>
               
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border bg-card">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-2xl">🎯</span>
+              <Card className="services-info-card">
+                <CardHeader className="services-info-header">
+                  <div className="services-info-card-icon-wrapper" style={{ backgroundColor: 'hsl(var(--primary) / 0.1)' }}>
+                    <span className="services-info-card-icon">🎯</span>
                   </div>
-                  <CardTitle className="text-xl font-oswald text-foreground">
+                  <CardTitle className="services-info-card-title">
                     Qualidade Garantida
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent>
+                  <CardDescription className="services-info-card-description">
                     Profissionais experientes e produtos de alta qualidade para o melhor resultado. 
                     Cada corte é uma obra de arte.
                   </CardDescription>
                 </CardContent>
               </Card>
               
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-border bg-card">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-cta/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cta/20 transition-colors">
-                    <span className="text-2xl">📱</span>
+              <Card className="services-info-card">
+                <CardHeader className="services-info-header">
+                  <div className="services-info-card-icon-wrapper" style={{ backgroundColor: 'hsl(var(--cta) / 0.1)' }}>
+                    <span className="services-info-card-icon">📱</span>
                   </div>
-                  <CardTitle className="text-xl font-oswald text-foreground">
+                  <CardTitle className="services-info-card-title">
                     Agendamento Online
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent>
+                  <CardDescription className="services-info-card-description">
                     Agende seu horário de forma rápida e prática através do nosso sistema online. 
                     Simples, rápido e eficiente.
                   </CardDescription>

@@ -151,7 +151,7 @@ const Map = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="map-card-text mb-4">
+                <p className="map-card-text map-card-text-spacing">
                   Oferecemos estacionamento gratuito para nossos clientes
                 </p>
                 <Badge variant="secondary">Gratuito</Badge>
@@ -167,7 +167,7 @@ const Map = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="map-card-text mb-4">
+                <p className="map-card-text map-card-text-spacing">
                   Nossa barbearia é totalmente acessível para pessoas com deficiência
                 </p>
                 <Badge variant="secondary">Acessível</Badge>

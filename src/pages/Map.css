@@ -212,6 +212,11 @@
   color: hsl(var(--muted-foreground));
 }
 
+/* Tailwind: mb-4 */
+.map-card-text-spacing {
+  margin-bottom: 1rem;
+}
+
 /* Tailwind: space-y-2 */
 .map-card-content-list {
   display: flex;

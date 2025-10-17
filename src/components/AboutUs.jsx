@@ -43,7 +43,7 @@ const AboutUs = () => {
               </p>           
             </div>
 
-            <div className="about-actions">
+            {/* <div className="about-actions">
               <Button 
                 size="lg" 
                 variant="cta" 
@@ -51,7 +51,7 @@ const AboutUs = () => {
               >
                 Conheça Mais
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
 
