@@ -35,9 +35,11 @@ const AboutUs = () => {
 
             <div className="about-description">
               <p>            
-              Corte impecável, barba no ponto e música boa rolando.<br />
-              Traga sua vibe — a gente cuida do resto.<br />
-              Sua melhor versão começa aqui.
+                Desde 2022, unimos técnica, estilo e experiência em um só lugar.
+                Corte impecável, barba no ponto, ambiente aconchegante, boa música e muita network.
+                Um espaço feito para quem curte cuidar da aparência sem abrir mão do conforto e da vibe certa.
+                Aqui o papo rola solto, o som é de qualidade e o visual sai sempre no padrão.
+                Sua melhor versão começa aqui.
               </p>           
             </div>
 
@@ -72,10 +74,10 @@ const AboutUs = () => {
           </div>
           
           <div className="about-info-card">
-            <div className="about-info-icon">🍺</div>
-            <h3 className="about-info-title">Bebidas</h3>
+            <div className="about-info-icon">💈</div>
+            <h3 className="about-info-title">Sartisfação</h3>
             <p className="about-info-description">
-              Seleção especial de bebidas artesanais e drinks exclusivos
+              Você na sua melhor versão
             </p>
           </div>
         </div>
