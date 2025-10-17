@@ -12,9 +12,14 @@
   z-index: 60;
 }
 @media (max-width: 767px) {
-  .about-section {
-    padding-top: 0;
+  .about-section{
+   background-color: rgb(30, 27, 27);
+  
   }
+  .about-section {
+    padding-top: 0;    
+  }
+  
 }
 
 /* Tailwind: container mx-auto px-4 */

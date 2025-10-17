@@ -61,7 +61,7 @@ const AboutUs = () => {
             <div className="about-info-icon">🎵</div>
             <h3 className="about-info-title">Música</h3>
             <p className="about-info-description">
-              Ambiente com playlist exclusiva para criar a atmosfera perfeita
+              Ambiente com playlist exclusiva.
             </p>
           </div>
           
@@ -69,7 +69,7 @@ const AboutUs = () => {
             <div className="about-info-icon">🤝</div>
             <h3 className="about-info-title">Network</h3>
             <p className="about-info-description">
-              Espaço ideal para networking e fazer novas conexões
+              Espaço ideal para networking.
             </p>
           </div>
           
