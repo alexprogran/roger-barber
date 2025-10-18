@@ -461,8 +461,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .service-card-header,
@@ -501,16 +501,29 @@
   
   .service-card-header,
   .service-card-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   
   .service-card-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   
   .service-card-image-wrapper {
-    height: 160px;
+    height: 140px;
+  }
+  
+  .service-card-header {
+    padding-top: 1.5rem;
+  }
+  
+  .service-card-content {
+    padding-bottom: 1.5rem;
+  }
+  
+  .service-button {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
   }
   
   .service-price {

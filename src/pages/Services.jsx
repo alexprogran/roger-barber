@@ -42,7 +42,7 @@ const Services = () => {
       price: "R$ 25",
       duration: "20 min",
       features: ["Design personalizado", "Técnica precisa", "Resultado natural"],
-      image: "/corte.png",
+      image: "/sobrancelha.png",
       popular: false
     },
     {
@@ -52,17 +52,17 @@ const Services = () => {
       price: "R$ 55",
       duration: "40 min",
       features: ["Hidratação profunda", "Massagem relaxante", "Produtos especiais"],
-      image: "/corte.png",
+      image: "/corte.webp",
       popular: false
     },
     {
       id: 6,
-      title: "Pacote Premium",
+      title: "Luzes",
       description: "Experiência completa com todos os serviços",
       price: "R$ 120",
       duration: "90 min",
       features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
-      image: "/corte.png",
+      image: "/luzes.png",
       popular: true
     }
   ];
@@ -91,13 +91,13 @@ const Services = () => {
             <div className="services-grid">
               {services.map((service) => (
                 <Card key={service.id} className={`service-card ${service.popular ? 'popular' : ''}`}>
-                  {service.popular && (
+                  {/* {service.popular && (
                     <div className="popular-badge">
                       <Badge variant="secondary" className="popular-badge-content">
                         Mais Popular
                       </Badge>
                     </div>
-                  )}
+                  )} */}
                   
                   <CardHeader className="service-card-header">
                     <CardTitle className="service-card-title">
@@ -147,7 +147,7 @@ const Services = () => {
         </section>
 
         {/* Additional Info Section */}
-        <section className="services-info-section">
+        {/* <section className="services-info-section">
           <div className="services-info-container">
             <div className="services-info-header">
               <h2 className="services-info-title">
@@ -213,7 +213,7 @@ const Services = () => {
               </Card>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       
      

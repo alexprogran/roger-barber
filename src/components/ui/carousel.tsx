@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -93,6 +95,7 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
         return;
       }
 
+      console.log("✅ Embla Carousel initialized:", api);
       onSelect(api);
       api.on("reInit", onSelect);
       api.on("select", onSelect);

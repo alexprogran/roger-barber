@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote, Users, Award, ThumbsUp } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import "./UserReview.css";
 
 const UserReview = () => {
@@ -104,8 +105,12 @@ const UserReview = () => {
               <span className="user-review-hero-title-foreground">SOBRE NÓS</span>
             </h1>
             
-            <p className="user-review-hero-description">
+            {/* <p className="user-review-hero-description">
               Mais de {stats.totalReviews} clientes já confiaram em nossos serviços. 
+              Veja o que eles têm a dizer sobre a experiência na nossa barbearia.
+            </p> */}
+             <p className="user-review-hero-description">
+             Agradecemos a todos os clientes que já confiaram em nossos serviços. 
               Veja o que eles têm a dizer sobre a experiência na nossa barbearia.
             </p>
 
@@ -139,57 +144,69 @@ const UserReview = () => {
         </div>
       </section>
 
-      {/* Reviews Grid */}
+      {/* Reviews Carousel */}
       <section className="user-review-grid-section">
         <div className="user-review-container">
-          <div className="user-review-grid">
-            {reviews.map((review) => (
-              <Card key={review.id} className="user-review-card">
-                <CardHeader className="user-review-card-header">
-                  <div className="user-review-card-header-top">
-                    <div>
-                      <CardTitle className="user-review-card-name">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription className="user-review-card-date">
-                        {review.date}
-                      </CardDescription>
-                    </div>
-                    {review.verified && (
-                      <Badge variant="secondary" className="user-review-verified-badge">
-                        Verificado
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="user-review-carousel"
+          >
+            <CarouselContent className="user-review-carousel-content">
+              {reviews.map((review) => (
+                <CarouselItem key={review.id} className="user-review-carousel-item">
+                  <Card className="user-review-card">
+                    <CardHeader className="user-review-card-header">
+                      <div className="user-review-card-header-top">
+                        <div>
+                          <CardTitle className="user-review-card-name">
+                            {review.name}
+                          </CardTitle>
+                          <CardDescription className="user-review-card-date">
+                            {review.date}
+                          </CardDescription>
+                        </div>
+                        {review.verified && (
+                          <Badge variant="secondary" className="user-review-verified-badge">
+                            Verificado
+                          </Badge>
+                        )}
+                      </div>
+                      
+                      <div className="user-review-stars-wrapper">
+                        {renderStars(review.rating)}
+                        <span className="user-review-rating-text">
+                          {review.rating}/5
+                        </span>
+                      </div>
+                      
+                      <Badge variant="outline" className="user-review-service-badge">
+                        {review.service}
                       </Badge>
-                    )}
-                  </div>
-                  
-                  <div className="user-review-stars-wrapper">
-                    {renderStars(review.rating)}
-                    <span className="user-review-rating-text">
-                      {review.rating}/5
-                    </span>
-                  </div>
-                  
-                  <Badge variant="outline" className="user-review-service-badge">
-                    {review.service}
-                  </Badge>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="user-review-comment-wrapper">
-                    <Quote className="user-review-quote-icon" />
-                    <p className="user-review-comment">
-                      "{review.comment}"
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    </CardHeader>
+                    
+                    <CardContent>
+                      <div className="user-review-comment-wrapper">
+                        <Quote className="user-review-quote-icon" />
+                        <p className="user-review-comment">
+                          "{review.comment}"
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="user-review-carousel-prev" />
+            <CarouselNext className="user-review-carousel-next" />
+          </Carousel>
         </div>
       </section>
 
-      {/* Rating Breakdown */}
-      <section className="user-review-breakdown-section">
+      
+      {/* <section className="user-review-breakdown-section">
         <div className="user-review-container">
           <div className="user-review-breakdown-container">
             <h2 className="user-review-breakdown-title">
@@ -225,7 +242,7 @@ const UserReview = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="user-review-cta-section">
@@ -246,20 +263,13 @@ const UserReview = () => {
               <Star className="user-review-button-icon" />
               Agendar Agora
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="user-review-cta-button-outline"
-            >
-              <Quote className="user-review-button-icon" />
-              Deixar Avaliação
-            </Button>
+           
           </div>
         </div>
       </section>
 
       {/* Trust Indicators */}
-      <section className="user-review-trust-section">
+      {/* <section className="user-review-trust-section">
         <div className="user-review-container">
           <div className="user-review-trust-grid">
             <div className="user-review-trust-item">
@@ -295,7 +305,7 @@ const UserReview = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

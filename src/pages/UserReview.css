@@ -108,22 +108,25 @@
 /* Tailwind: flex flex-col sm:flex-row items-center justify-center gap-8 mb-12 */
 .user-review-stats {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;  /* Mobile: já em linha */
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 0.75rem;  /* Gap menor para mobile */
   margin-bottom: 3rem;
+  flex-wrap: wrap;  /* Permite quebra de linha se necessário */
 }
 
 @media (min-width: 640px) {
   .user-review-stats {
-    flex-direction: row;
+    gap: 2rem;  /* Gap maior em telas maiores */
   }
 }
 
 /* Tailwind: text-center */
 .user-review-stat {
   text-align: center;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Tailwind: flex items-center justify-center gap-2 mb-2 */
@@ -131,42 +134,83 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 640px) {
+  .user-review-stat-value-wrapper {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Tailwind: h-8 w-8 text-accent fill-accent */
 .user-review-stat-icon-accent {
-  height: 2rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   color: hsl(var(--accent));
   fill: hsl(var(--accent));
 }
 
+@media (min-width: 640px) {
+  .user-review-stat-icon-accent {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
 /* Tailwind: h-8 w-8 text-primary */
 .user-review-stat-icon-primary {
-  height: 2rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   color: hsl(var(--primary));
+}
+
+@media (min-width: 640px) {
+  .user-review-stat-icon-primary {
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 /* Tailwind: h-8 w-8 text-cta */
 .user-review-stat-icon-cta {
-  height: 2rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   color: hsl(var(--cta));
+}
+
+@media (min-width: 640px) {
+  .user-review-stat-icon-cta {
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 /* Tailwind: text-4xl font-bold text-foreground */
 .user-review-stat-value {
-  font-size: 2.25rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: hsl(var(--foreground));
+}
+
+@media (min-width: 640px) {
+  .user-review-stat-value {
+    font-size: 2.25rem;
+  }
 }
 
 /* Tailwind: text-muted-foreground */
 .user-review-stat-label {
   color: hsl(var(--muted-foreground));
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .user-review-stat-label {
+    font-size: 1rem;
+  }
 }
 
 /* Tailwind: py-16 */
@@ -180,6 +224,98 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+/* Carousel Styles */
+.user-review-carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+/* Carousel Content - Tailwind: -ml-2 md:-ml-4 */
+.user-review-carousel-content {
+  display: flex;
+  margin-left: -0.5rem;
+}
+
+@media (min-width: 768px) {
+  .user-review-carousel-content {
+    margin-left: -1rem;
+  }
+}
+
+/* Carousel Item - Tailwind: pl-2 md:pl-4 md:basis-1/2 */
+.user-review-carousel-item {
+  min-width: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 100%;  /* Mobile: 1 card por linha */
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .user-review-carousel-item {
+    padding-left: 1rem;
+    flex-basis: 50%;  /* Desktop: 2 cards por linha */
+  }
+}
+
+/* Carousel Buttons */
+.user-review-carousel-prev,
+.user-review-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: hsl(var(--card));
+  border: 2px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.user-review-carousel-prev:hover,
+.user-review-carousel-next:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+  transform: translateY(-50%) scale(1.1);
+}
+
+.user-review-carousel-prev {
+  left: 0;
+}
+
+.user-review-carousel-next {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .user-review-carousel {
+    padding: 0 2.5rem;
+  }
+  
+  .user-review-carousel-prev,
+  .user-review-carousel-next {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .user-review-carousel-prev {
+    left: 0;
+  }
+  
+  .user-review-carousel-next {
+    right: 0;
+  }
 }
 
 @media (min-width: 768px) {

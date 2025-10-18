@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Phone, Mail, Navigation } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, Navigation, Instagram } from "lucide-react";
 import "./Map.css";
 
 const Map = () => {
@@ -11,6 +11,8 @@ const Map = () => {
     zipCode: "01234-567",
     phone: "(11) 99999-9999",
     email: "contato@barbearia.com.br",
+    instagram: "@rogerbarber",
+    instagramUrl: "https://instagram.com/rogerbarber",
     hours: {
       weekdays: "Segunda a Sexta: 8h às 19h",
       saturday: "Sábado: 8h às 17h",
@@ -65,84 +67,101 @@ const Map = () => {
             <h2 className="map-section-title">
               ENCONTRE-NOS
             </h2>
-            <p className="map-section-description">
-              Estamos localizados no coração da cidade, com fácil acesso e estacionamento disponível
-            </p>
+            {/* <p className="map-section-description">
+              Estamos localizados no Jardim Limoeiro, Camaçari - BA
+            </p> */}
           </div>
 
-          <div className="map-content-grid">
-            {/* Google Map */}
-            <div className="map-iframe-container">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6333!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzcnNTkuOSJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Localização da Barbearia"
-              ></iframe>
-            </div>
+          {/* Location Info Cards - Above Map */}
+          <div className="map-info-cards">
+            <Card>
+              <CardHeader>
+                <CardTitle className="map-card-title-wrapper">
+                  <MapPin className="map-card-icon" />
+                  Endereço
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="map-card-address">{locationInfo.address}</p>
+                <p className="map-card-text">{locationInfo.city}</p>
+                <p className="map-card-text">CEP: {locationInfo.zipCode}</p>
+              </CardContent>
+            </Card>
 
-            {/* Location Info */}
-            <div className="map-info-cards">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="map-card-title-wrapper">
-                    <MapPin className="map-card-icon" />
-                    Endereço
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="map-card-address">{locationInfo.address}</p>
-                  <p className="map-card-text">{locationInfo.city}</p>
-                  <p className="map-card-text">CEP: {locationInfo.zipCode}</p>
-                </CardContent>
-              </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="map-card-title-wrapper">
+                  <Clock className="map-card-icon" />
+                  Horário de Funcionamento
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="map-card-content-list">
+                <p>{locationInfo.hours.weekdays}</p>
+                <p>{locationInfo.hours.saturday}</p>
+                <p className="map-card-text">{locationInfo.hours.sunday}</p>
+              </CardContent>
+            </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="map-card-title-wrapper">
-                    <Clock className="map-card-icon" />
-                    Horário de Funcionamento
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="map-card-content-list">
-                  <p>{locationInfo.hours.weekdays}</p>
-                  <p>{locationInfo.hours.saturday}</p>
-                  <p className="map-card-text">{locationInfo.hours.sunday}</p>
-                </CardContent>
-              </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="map-card-title-wrapper">
+                  <Phone className="map-card-icon" />
+                  Contato
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="map-card-content-list">
+                <p className="map-contact-item">
+                  <Phone className="map-contact-icon" />
+                  {locationInfo.phone}
+                </p>
+                <p className="map-contact-item">
+                  <Mail className="map-contact-icon" />
+                  {locationInfo.email}
+                </p>
+              </CardContent>
+            </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="map-card-title-wrapper">
-                    <Phone className="map-card-icon" />
-                    Contato
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="map-card-content-list">
-                  <p className="map-contact-item">
-                    <Phone className="map-contact-icon" />
-                    {locationInfo.phone}
-                  </p>
-                  <p className="map-contact-item">
-                    <Mail className="map-contact-icon" />
-                    {locationInfo.email}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="map-card-title-wrapper">
+                  <Instagram className="map-card-icon" />
+                  Instagram
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <a 
+                  href={locationInfo.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="map-contact-item map-instagram-link"
+                >
+                  <Instagram className="map-contact-icon" />
+                  {locationInfo.instagram}
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Google Map - Below Cards */}
+          <div className="map-iframe-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.6333!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzcnNTkuOSJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da Barbearia"
+            ></iframe>
           </div>
         </div>
       </section>
 
-      {/* Additional Info Section */}
-      <section className="map-additional-section">
+     
+       {/* <section className="map-additional-section">
         <div className="map-container">
-          <div className="map-additional-grid">
-            {/* Parking Info */}
+          <div className="map-additional-grid">          
             <Card>
               <CardHeader>
                 <CardTitle className="map-card-title-wrapper">
@@ -156,9 +175,7 @@ const Map = () => {
                 </p>
                 <Badge variant="secondary">Gratuito</Badge>
               </CardContent>
-            </Card>
-
-            {/* Accessibility */}
+            </Card>           
             <Card>
               <CardHeader>
                 <CardTitle className="map-card-title-wrapper">
@@ -172,9 +189,7 @@ const Map = () => {
                 </p>
                 <Badge variant="secondary">Acessível</Badge>
               </CardContent>
-            </Card>
-
-            {/* Nearby Landmarks */}
+            </Card>            
             <Card className="map-landmarks-card">
               <CardHeader>
                 <CardTitle className="map-card-title-wrapper">
@@ -195,7 +210,7 @@ const Map = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </section>  */}
 
       {/* CTA Section */}
       <section className="map-cta-section">
@@ -215,14 +230,14 @@ const Map = () => {
               <Phone className="map-hero-button-icon" />
               Ligar Agora
             </Button>
-            <Button 
+            {/* <Button 
               size="lg" 
               variant="outline"
               className="map-cta-button-outline"
             >
               <Mail className="map-hero-button-icon" />
               Enviar Mensagem
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
