@@ -113,25 +113,14 @@
 .service-card {
   position: relative;
   background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
+  border: 1px solid hsl(var(--primary));
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1);
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-warm);
-  border-color: hsl(var(--primary) / 0.3);
-}
-
-.service-card.popular {
-  border-color: hsl(var(--primary));
   box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.2);
 }
 
-.service-card.popular::before {
+.service-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -139,6 +128,12 @@
   right: 0;
   height: 4px;
   background: var(--gradient-accent);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-warm);
+  border-color: hsl(var(--primary) / 0.3);
 }
 
 /* Popular Badge */
@@ -275,16 +270,13 @@
   transition: var(--transition-smooth);
   text-transform: uppercase;
   letter-spacing: 0.025em;
-}
-
-.service-card.popular .service-button {
   background: var(--gradient-cta);
   color: hsl(var(--cta-foreground));
   border: none;
   box-shadow: var(--shadow-warm);
 }
 
-.service-card.popular .service-button:hover {
+.service-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
 }

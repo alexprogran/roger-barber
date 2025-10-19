@@ -12,11 +12,21 @@ const Services = () => {
       price: "R$ 45",
       duration: "45 min",
       features: ["Técnicas modernas", "Produtos premium", "Finalização completa"],
-      image: "/corte.png",
+      image: "/serv_corte.png",
+      popular: true
+    }, 
+    {
+      id: 2,
+      title: "Corte máquina",
+      description: "Pacote completo para um visual impecável",
+      price: "R$ 70",
+      duration: "60 min",
+      features: ["Corte + Barba", "Economia de R$ 10", "Produtos premium"],
+      image: "/serv_cort_maquina.png",
       popular: true
     },
     {
-      id: 2,
+      id: 3,
       title: "Barba Completa",
       description: "Aparar, modelar e finalizar sua barba com perfeição",
       price: "R$ 35",
@@ -25,16 +35,7 @@ const Services = () => {
       image: "/serv_barba.png",
       popular: false
     },
-    {
-      id: 3,
-      title: "Corte + Barba",
-      description: "Pacote completo para um visual impecável",
-      price: "R$ 70",
-      duration: "60 min",
-      features: ["Corte + Barba", "Economia de R$ 10", "Produtos premium"],
-      image: "/corte.png",
-      popular: true
-    },
+   
     {
       id: 4,
       title: "Sobrancelha",
@@ -42,27 +43,84 @@ const Services = () => {
       price: "R$ 25",
       duration: "20 min",
       features: ["Design personalizado", "Técnica precisa", "Resultado natural"],
-      image: "/sobrancelha.png",
+      image: "/serv_sobrancelha.png",
       popular: false
     },
     {
       id: 5,
-      title: "Tratamento Capilar",
-      description: "Hidratação e tratamento para cabelos e couro cabeludo",
-      price: "R$ 55",
-      duration: "40 min",
-      features: ["Hidratação profunda", "Massagem relaxante", "Produtos especiais"],
-      image: "/corte.webp",
+      title: "Corte Infantil",
+      description: "Hidratação e tratamento para cabelos e couro cabeludo",      
+      image: "/serv_cort_infantil.png",
       popular: false
     },
     {
       id: 6,
+      title: "Lavagem e Hidratação",
+      description: "Hidratação e tratamento para cabelos e couro cabeludo",
+      price: "R$ 55",
+      duration: "40 min",
+      features: ["Hidratação profunda", "Massagem relaxante", "Produtos especiais"],
+      image: "serv_hidratacao.png",
+      popular: false
+    },
+    {
+      id: 7,
       title: "Luzes",
       description: "Experiência completa com todos os serviços",
       price: "R$ 120",
       duration: "90 min",
       features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
       image: "/serv_luzes.png",
+      popular: true
+    },
+    {
+      id: 8,
+      title: "Free Style",
+      description: "Experiência completa com todos os serviços",
+      price: "R$ 120",
+      duration: "90 min",
+      features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/serv_freestyle.png",
+      popular: true
+    },
+    {
+      id: 8,
+      title: "Flexo",
+      description: "Experiência completa com todos os serviços",
+      price: "R$ 120",
+      duration: "90 min",
+      features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/serv_refelxo.png",
+      popular: true
+    },
+    {
+      id: 9,
+      title: "Nevou",
+      description: "Experiência completa com todos os serviços",
+      price: "R$ 120",
+      duration: "90 min",
+      features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/serv_nevou.png",
+      popular: true
+    },
+    {
+      id: 10,
+      title: "Relaxamento",
+      description: "Experiência completa com todos os serviços",
+      price: "R$ 120",
+      duration: "90 min",
+      features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/serv_relaxamento.png",
+      popular: true
+    },
+    {
+      id: 11,
+      title: "Progressiva",
+      description: "Experiência completa com todos os serviços",
+      price: "R$ 120",
+      duration: "90 min",
+      features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
+      image: "/serv_progressiva.png",
       popular: true
     }
   ];
@@ -90,7 +148,7 @@ const Services = () => {
           <div className="services-info-container" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
             <div className="services-grid">
               {services.map((service) => (
-                <Card key={service.id} className={`service-card ${service.popular ? 'popular' : ''}`}>
+                <Card key={service.id} className="service-card">
                   {/* {service.popular && (
                     <div className="popular-badge">
                       <Badge variant="secondary" className="popular-badge-content">
@@ -135,7 +193,7 @@ const Services = () => {
                     <Button 
                       className="service-button"
                       size="lg"
-                      variant={service.popular ? "default" : "outline"}
+                      variant="default"
                     >
                       Agendar
                     </Button>

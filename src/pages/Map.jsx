@@ -34,6 +34,7 @@ const Map = () => {
         <div className="map-hero-image-container">
           <img 
             src="/Barbearia.jpg" 
+            // src="/frente_barber2.jpeg" 
             alt="Barbearia - Interior" 
             className="map-hero-image"
           />

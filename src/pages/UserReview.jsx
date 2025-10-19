@@ -8,65 +8,46 @@ import "./UserReview.css";
 const UserReview = () => {
   const reviews = [
     {
-      id: 1,
-      name: "Carlos Silva",
+      // id: 1,
+      // name: "Carlos Silva",
       rating: 5,
-      date: "15 de Janeiro, 2024",
-      service: "Corte + Barba",
-      comment: "Excelente atendimento! O barbeiro foi muito profissional e o resultado ficou perfeito. Ambiente aconchegante e música boa. Recomendo!",
-      verified: true
+      // date: "15 de Janeiro, 2024",
+      // service: "Corte + Barba",
+      comment: "Excelente atendimento! Ambiente aconchegante. Recomendo!",
+      // verified: true
     },
     {
-      id: 2,
-      name: "João Santos",
-      rating: 5,
-      date: "12 de Janeiro, 2024",
-      service: "Corte Masculino",
-      comment: "Primeira vez aqui e já me tornei cliente fiel. Qualidade excepcional e preço justo. O ambiente é incrível!",
-      verified: true
+      id: 2,     
+      rating: 5,        
+      comment: "Primeira vez aqui e já me tornei cliente fiel. Qualidade excepcional!"    
     },
     {
-      id: 3,
-      name: "Pedro Oliveira",
-      rating: 4,
-      date: "10 de Janeiro, 2024",
-      service: "Barba Completa",
-      comment: "Muito bom! O barbeiro entendeu exatamente o que eu queria. Só não dei 5 estrelas porque demorou um pouco mais que o esperado.",
-      verified: true
+      id: 3, 
+      rating: 5,   
+      comment: "Muito bom! O barbeiro entendeu exatamente o que eu queria. " 
     },
     {
       id: 4,
-      name: "Rafael Costa",
       rating: 5,
-      date: "8 de Janeiro, 2024",
-      service: "Pacote Premium",
-      comment: "Experiência completa! Desde o atendimento até o resultado final, tudo perfeito. Vale cada centavo investido.",
-      verified: true
+      comment: "Experiência completa! Desde o atendimento até o resultado final.",
+     
     },
     {
       id: 5,
-      name: "Lucas Ferreira",
       rating: 5,
-      date: "5 de Janeiro, 2024",
-      service: "Corte + Barba",
-      comment: "Melhor barbearia da região! Profissionais qualificados, produtos de qualidade e ambiente único. Super recomendo!",
-      verified: true
+      comment: "Melhor barbearia da região! Profissionais qualificados."
     },
     {
       id: 6,
-      name: "Marcos Alves",
-      rating: 4,
-      date: "3 de Janeiro, 2024",
-      service: "Tratamento Capilar",
-      comment: "Atendimento diferenciado! O tratamento capilar foi excelente e me deixou com o cabelo muito mais saudável.",
-      verified: true
+      rating: 5,
+      comment: "Atendimento diferenciado! O tratamento capilar foi excelente.",
     }
   ];
 
   const stats = {
-    totalReviews: 247,
-    averageRating: 4.8,
-    fiveStars: 89,
+    totalReviews: '100%',
+    averageRating: 5.0,
+    fiveStars: 100,
     fourStars: 12,
     threeStars: 3,
     twoStars: 1,
@@ -109,10 +90,10 @@ const UserReview = () => {
               Mais de {stats.totalReviews} clientes já confiaram em nossos serviços. 
               Veja o que eles têm a dizer sobre a experiência na nossa barbearia.
             </p> */}
-             <p className="user-review-hero-description">
+             {/* <p className="user-review-hero-description">
              Agradecemos a todos os clientes que já confiaram em nossos serviços. 
-              Veja o que eles têm a dizer sobre a experiência na nossa barbearia.
-            </p>
+              Veja o que eles têm a dizer sobre a experiência na nossa Roger Barber.
+            </p> */}
 
             {/* Rating Stats */}
             <div className="user-review-stats">
@@ -121,7 +102,7 @@ const UserReview = () => {
                   <Star className="user-review-stat-icon-accent" />
                   <span className="user-review-stat-value">{stats.averageRating}</span>
                 </div>
-                <p className="user-review-stat-label">Média de Avaliações</p>
+                <p className="user-review-stat-label">Avaliação 5 estrelas</p>
               </div>
               
               <div className="user-review-stat">
@@ -129,7 +110,7 @@ const UserReview = () => {
                   <Users className="user-review-stat-icon-primary" />
                   <span className="user-review-stat-value">{stats.totalReviews}</span>
                 </div>
-                <p className="user-review-stat-label">Clientes Avaliaram</p>
+                <p className="user-review-stat-label">Cliente Satisfeitos</p>
               </div>
               
               <div className="user-review-stat">
