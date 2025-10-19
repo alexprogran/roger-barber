@@ -39,6 +39,29 @@
   position: relative;
 }
 
+/* Instagram Button - Left Side */
+.navbar-instagram-button {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: hsl(var(--foreground));
+  transition: all 0.3s ease;
+}
+
+.navbar-instagram-button:hover {
+  transform: scale(1.1);
+  color: hsl(var(--cta));
+}
+
+.navbar-instagram-icon {
+  width: 24px;
+  height: 24px;
+}
+
 /* Tailwind: hidden lg:flex items-center space-x-8 */
 .navbar-desktop-menu {
   display: none;
@@ -46,11 +69,25 @@
   gap: 2rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .navbar-desktop-menu {
     display: flex;
   }
+  .navbar-instagram-button {
+    display: none;
+  }
+  
 }
+
+@media(max-width: 768px) {
+.navbar-instagram-icon {
+  position: fixed; 
+  left: 78%;   
+  width: 24px;
+  height: 24px;
+}
+}
+
 
 /* Tailwind: text-foreground hover:text-accent transition-colors duration-300 font-medium */
 .navbar-link {
@@ -66,7 +103,6 @@
   border-bottom-color: hsl(var(--cta));
 }
 
-/* Tailwind: inline-flex items-center gap-2 bg-cta hover:bg-cta/90 text-cta-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 btn-barbershop */
 .navbar-cta-button {
   display: inline-flex;
   align-items: center;

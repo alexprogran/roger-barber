@@ -107,7 +107,6 @@
   padding-right: 1rem;
 }
 
-/* Tailwind: flex justify-center items-center gap-8 */
 .home-logo-container {
   width: 100%;
   display: flex;
@@ -127,22 +126,27 @@
   }
 }
 
-
+/* 
 .home-logo {  
-  height: 20rem; /* 320px */
+  height: 15rem; 
   width: auto;
-  max-width: 100%;
-}
+  
+} */
 
 @media (max-width: 768px) {
   .home-logo { 
-     height: 18rem; /* 384px */
+     height: 15rem;
+     width: 100%; 
+    
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+
   .home-logo {
-    height: 28rem; /* 448px */
+    height: 20rem; /* 448px */
+    width: auto;
+    
   }
 }
 
@@ -183,8 +187,8 @@
 @media (min-width: 768px) {
   .home-hero-description {
     font-size: 1.5rem;
-  }
-}
+  } 
+} 
 
 /* Hero Buttons Container */
 .home-hero-buttons {
@@ -258,6 +262,84 @@
 .home-whatsapp-icon {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+/* Social Media Floating Buttons Container - Desktop Only */
+.social-float-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+/* Instagram Floating Button - Desktop Only */
+.instagram-float-button {
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(180, 179, 179, 0.3);
+  transition: all 0.3s ease;
+}
+
+.instagram-float-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.instagram-float-icon {
+  width: 32px;
+  height: 32px;
+  color: rgb(255, 252, 252);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float-button {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-cta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px hsl(var(--cta) / 0.4);
+  transition: all 0.3s ease;
+  animation: whatsapp-float-pulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px hsl(var(--cta) / 0.6);
+}
+
+.whatsapp-float-icon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+/* Animação de pulso para o botão flutuante */
+@keyframes whatsapp-float-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px hsl(var(--cta) / 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px hsl(var(--cta) / 0.7);
+  }
+}
+
+/* Responsivo - ajustar posição em mobile */
+@media (max-width: 768px) {
+  /* Ocultar botões flutuantes no mobile (Instagram está no Navbar) */
+  .social-float-container {
+    display: none;
+  }
 }
 
 /* Services Button Wrapper - APENAS MOBILE */
