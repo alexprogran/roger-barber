@@ -7,7 +7,7 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: "Corte Masculino",
+      title: "Corte Tesoura",
       description: "Corte moderno e clássico com técnicas profissionais",
       price: "R$ 45",
       duration: "45 min",
@@ -22,7 +22,7 @@ const Services = () => {
       price: "R$ 35",
       duration: "30 min",
       features: ["Modelagem personalizada", "Hidratação", "Finalização com óleo"],
-      image: "/corte.png",
+      image: "/serv_barba.png",
       popular: false
     },
     {
@@ -62,7 +62,7 @@ const Services = () => {
       price: "R$ 120",
       duration: "90 min",
       features: ["Todos os serviços", "Bebida inclusa", "Atendimento VIP"],
-      image: "/luzes.png",
+      image: "/serv_luzes.png",
       popular: true
     }
   ];
