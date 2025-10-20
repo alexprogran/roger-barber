@@ -85,7 +85,7 @@ const Services = () => {
     },
     {
       id: 8,
-      title: "Flexo",
+      title: "Reflexo",
       description: "Experiência completa com todos os serviços",
       price: "R$ 120",
       duration: "90 min",
@@ -126,7 +126,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="services-wrapper">
+    <div id="services" className="services-wrapper">
       <main className="services-page">
         {/* Hero Section */}
         <section className="services-hero">

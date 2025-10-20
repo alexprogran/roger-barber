@@ -60,7 +60,7 @@ const Home = () => {
 
           <div className="home-whatsapp-button-wrapper">
             <a
-              href="https://wa.me/5571999999999?text=Olá! Gostaria de agendar um horário na BarBer."
+              href="https://wa.me/5571981577250"
               target="_blank"
               rel="noopener noreferrer"
               className="home-whatsapp-button btn-barbershop"
@@ -93,7 +93,7 @@ const Home = () => {
       <div className="social-float-container">
         {/* Instagram Floating Button - Desktop Only */}
         <a
-          href="https://www.instagram.com/roger_barber"
+          href="https://www.instagram.com/oficial.roger_barber/"
           target="_blank"
           rel="noopener noreferrer"
           className="instagram-float-button"
@@ -110,7 +110,7 @@ const Home = () => {
 
         {/* WhatsApp Floating Button */}
         <a
-          href="https://wa.me/5571999999999?text=Olá! Gostaria de agendar um horário na BarBer."
+          href="https://wa.me/5571981577250"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-float-button"

@@ -42,19 +42,24 @@
 /* Instagram Button - Left Side */
 .navbar-instagram-button {
   position: absolute;
-  left: 0;
+  left: 15.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   color: hsl(var(--foreground));
   transition: all 0.3s ease;
+  transform: scale(1);
 }
 
 .navbar-instagram-button:hover {
   transform: scale(1.1);
   color: hsl(var(--cta));
+}
+
+.navbar-instagram-button:active {
+  transform: scale(1);
 }
 
 .navbar-instagram-icon {
@@ -162,9 +167,9 @@
 }
 
 .navbar-mobile-menu {
-
- margin-top: -80px;
-
+  position: relative;
+  z-index: 1000;
+  margin-top: -80px;
   display: block;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -194,6 +199,9 @@
   padding-bottom: 0.5rem;
   transition: border-color 300ms ease;
   display: inline-block;
+  position: relative;
+  z-index: 1001;
+  cursor: pointer;
 }
 
 .navbar-mobile-link:hover {

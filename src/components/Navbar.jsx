@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="navbar-content">
           {/* Instagram Icon - Left Side */}
           <a
-            href="https://www.instagram.com/roger_barber"
+            href="https://www.instagram.com/oficial.roger_barber/"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-instagram-button"
@@ -71,7 +71,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://wa.me/5571999999999?"
+              href="https://wa.me/5571981577250?"
               target="_blank"
               rel="noopener noreferrer"
               className="navbar-cta-button btn-barbershop"
@@ -114,7 +114,7 @@ const Navbar = () => {
               ))}
               {/* <div className="navbar-mobile-cta-wrapper">
                 <a
-                  href="https://wa.me/5571999999999?text=Olá! Gostaria de agendar um horário na BarBer."
+                  href="https://wa.me/5571981577250"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="navbar-mobile-cta btn-barbershop"
