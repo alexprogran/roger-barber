@@ -144,7 +144,7 @@
 }
 
 /* Tailwind: lg:hidden absolute right-0 text-foreground hover:text-accent transition-colors */
-.navbar-mobile-toggle {
+.navbar-mobile-toggle {  
   display: block;
   position: absolute;
   right: 0;
@@ -167,12 +167,14 @@
 }
 
 .navbar-mobile-menu {
+  width: 77%; 
   position: relative;
   z-index: 1000;
-  margin-top: -80px;
+  margin-top: -55px;
   display: block;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  z-index: 0;
 }
 
 @media (min-width: 1024px) {
