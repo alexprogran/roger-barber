@@ -194,12 +194,7 @@
 .map-info-cards .map-card-title-wrapper {
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .map-info-cards .map-card-title-wrapper {
-    justify-content: center;  /* Centraliza no desktop */
-  }
+  justify-content: flex-start;  /* Alinha à esquerda */
 }
 
 .map-info-cards .map-card-title-wrapper svg {
@@ -215,26 +210,13 @@
 .map-info-cards .map-card-text {
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
-  text-align: left;  /* Alinha à esquerda no mobile */
-}
-
-@media (min-width: 768px) {
-  .map-info-cards .map-card-address,
-  .map-info-cards .map-card-text {
-    text-align: center;  /* Centraliza no desktop */
-  }
+  text-align: left;  /* Alinha à esquerda */
 }
 
 .map-info-cards .map-contact-item {
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
-  justify-content: flex-start;  /* Alinha à esquerda no mobile */
-}
-
-@media (min-width: 768px) {
-  .map-info-cards .map-contact-item {
-    justify-content: center;  /* Centraliza no desktop */
-  }
+  justify-content: flex-start;  /* Alinha à esquerda */
 }
 
 .map-info-cards .map-contact-icon {
@@ -249,7 +231,7 @@
 }
 
 .map-instagram-link:hover {
-  color: hsl(var(--primary));
+  color: hsl(var(--cta)); /* Verde limão */
 }
 
 @media (min-width: 768px) {
@@ -310,13 +292,7 @@
 }
 
 .map-info-cards .map-card-content-list p {
-  text-align: left;  /* Alinha à esquerda no mobile */
-}
-
-@media (min-width: 768px) {
-  .map-info-cards .map-card-content-list p {
-    text-align: center;  /* Centraliza no desktop */
-  }
+  text-align: left;  /* Alinha à esquerda */
 }
 
 /* Tailwind: flex items-center space-x-3 text-muted-foreground */

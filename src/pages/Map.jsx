@@ -6,16 +6,17 @@ import "./Map.css";
 
 const Map = () => {
   const locationInfo = {
-    address: "R. Principal, 2022 - Jardim Limoeiro",
+    address: "R. Luiz Eduardo Magalhães, 2022 - Jardim Limoeiro",
     city: "Camaçari - BA",
-    zipCode: "42800-689",
+    zipCode: "42800-725",
     phone: "(71) 98157-7250",
-    email: "rogerioferreira495@gmail.com",
-    instagram: "oficil.roger.barber",
-    instagramUrl: "https://www.instagram.com/oficial.roger_barber/",
+    email: "rogerioferreira4955@gmail.com",
+    instagram: "ofcc.barberroger",
+    instagramUrl: "https://www.instagram.com/ofcc.barberroger/",
     hours: {
-      weekdays: "Segunda a Sábado: 8h às 19h",    
-      sunday: "Domingo: Aberto"
+      weekdays: "Segunda a sexta: 8h às 19h",
+      saturday: "Sábado: 8h às 19h30",
+      sunday: "Domingo: 8h às 11h"
     }
   };
 
@@ -97,7 +98,7 @@ const Map = () => {
               </CardHeader>
               <CardContent className="map-card-content-list">
                 <p>{locationInfo.hours.weekdays}</p>
-                {/* <p>{locationInfo.hours.saturday}</p> */}
+                <p>{locationInfo.hours.saturday}</p>
                 <p className="map-card-text">{locationInfo.hours.sunday}</p>
               </CardContent>
             </Card>

@@ -190,13 +190,14 @@ const Services = () => {
                       ))}
                     </ul> */}
                     
-                    <Button 
+                    <a
+                      href="https://wa.me/5571981577250"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="service-button"
-                      size="lg"
-                      variant="default"
                     >
                       Agendar
-                    </Button>
+                    </a>
                   </CardContent>
                 </Card>
               ))}

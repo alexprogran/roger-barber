@@ -274,6 +274,11 @@
   color: hsl(var(--cta-foreground));
   border: none;
   box-shadow: var(--shadow-warm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .service-button:hover {

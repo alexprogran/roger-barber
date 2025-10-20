@@ -93,7 +93,7 @@ const Home = () => {
       <div className="social-float-container">
         {/* Instagram Floating Button - Desktop Only */}
         <a
-          href="https://www.instagram.com/oficial.roger_barber/"
+          href="https://www.instagram.com/ofcc.barberroger/"
           target="_blank"
           rel="noopener noreferrer"
           className="instagram-float-button"

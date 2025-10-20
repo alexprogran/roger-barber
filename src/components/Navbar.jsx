@@ -44,7 +44,7 @@ const Navbar = () => {
         <div className="navbar-content">
           {/* Instagram Icon - Left Side */}
           <a
-            href="https://www.instagram.com/oficial.roger_barber/"
+            href="https://www.instagram.com/ofcc.barberroger/"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-instagram-button"

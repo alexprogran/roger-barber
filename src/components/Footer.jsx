@@ -28,7 +28,7 @@ const Footer = () => {
               className="footer-social-button"
               asChild
             >
-              <a href="https://www.instagram.com/oficial.roger_barber/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/ofcc.barberroger/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="footer-social-icon" />
               </a>
             </Button>
@@ -81,16 +81,16 @@ const Footer = () => {
             <div className="footer-contact-list">
               <div className="footer-contact-item">
                 <Phone className="footer-contact-icon" />
-                <span>(71) </span>
+                <span>(71) 98157-7250</span>
               </div>
               <div className="footer-contact-item">
                 <Mail className="footer-contact-icon" />
-                <span>contato@barber.com.br</span>
+                <span>rogerioferreira4955@gmail.com</span>
               </div>
               <div className="footer-contact-item-start">
                 <MapPin className="footer-contact-icon-mt" />
                 <div>
-                  <p>Centro - Av.Lins, 123</p>                  
+                  <p>Jadim Limoeiro - Luiz Eduardo Magalhães, 2022</p>                  
                   <p>Camaçari, BA</p>
                 </div>
               </div>
