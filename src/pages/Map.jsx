@@ -14,9 +14,9 @@ const Map = () => {
     instagram: "ofcc.barberroger",
     instagramUrl: "https://www.instagram.com/ofcc.barberroger/",
     hours: {
-      weekdays: "Segunda a sexta: 8h às 19h",
-      saturday: "Sábado: 8h às 19h30",
-      sunday: "Domingo: 8h às 11h"
+      weekdays: "Segunda a sexta: 8:30 às 19h",
+      saturday: "Sábado: 8h às 19h",
+      sunday: "Domingo: 8h às 11:30"
     }
   };
 
